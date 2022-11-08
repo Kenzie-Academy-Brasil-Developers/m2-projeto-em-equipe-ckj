@@ -14,7 +14,7 @@ async function renderListPets(){
         <div class="flex flex-col">
             <img src="${avatar_url}" alt="cachorrinho">
             <h3 class="name-pet">${name}</h3>
-            <samp class="type-pet">${species}</samp>
+            <span class="type-pet">${species}</span>
         </div>
     </li>       
         `)
