@@ -26,7 +26,7 @@ header{
     height: 17rem;
     border-radius: var(--radius-4);
     box-shadow: rgba(60, 64, 67, 0.2) 0px 1px 2px 0px, rgba(60, 64, 67, 0.2) 0px 1px 3px 1px;
-    margin-left: 4rem;
+    margin-left: 2rem;
 }
 li > div > img{
     width: 100%;
@@ -77,6 +77,12 @@ li > div > img{
     scroll-snap-type: x mandatory;
     scrollbar-width: none;
 }*/
+.hidden-vec{
+    display: none;
+}
+.hidden-button{
+    display: block;
+}
 
 footer{
     width: 100%;
@@ -87,6 +93,16 @@ footer{
     bottom: 0;
 }
 
+@media(max-width: 700px){
+    .hidden-vec{
+        display: block;
+    }
+    .hidden-button{
+        display: none;
+        
+    }
+
+}
 
 @media(min-width: 800px){
     .container-ul{
@@ -103,7 +119,20 @@ footer{
 
 }
 
-@media(min-width: 1440px){
+@media(min-width: 1279px){
+    .container-ul{
+        width: 80%;
+        height: 39rem;
+        padding: 2rem 0;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        gap:2rem;
+        background-color: var(--white-fixed);
+        overflow-y: scroll;
+    }
+}
+@media(min-width: 1600px){
     .container-ul{
         width: 60%;
         height: 39rem;
@@ -115,4 +144,10 @@ footer{
         background-color: var(--white-fixed);
         overflow-y: scroll;
     }
+}
+.absolut-buttons{
+    display: flex;
+    position: absolute;
+    top: 5rem;
+    left: 30%;
 }
