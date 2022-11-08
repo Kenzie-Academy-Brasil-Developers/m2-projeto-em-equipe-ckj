@@ -9,6 +9,7 @@
 :root {
     --brand100: #4E2096;
     --brand200: #B48CF2;
+    --footer-color: #F1EEF7;
     --green100: #33CC66;
     --alert100: #EA534A;
     --gray100: #1B1C1E;
@@ -39,7 +40,7 @@
   --radius-4: var(--size-14); /* 4px */  
 
 
-  --font-weight-1: 700; /* bold */
+  --font-weight-0: 700; /* bold */
   --font-weight-1: 600; /* bold */
   --font-weight-2: 500; /* medium */
   --font-weight-3: 400; /* regular */ 
@@ -51,6 +52,9 @@ body {
 
 ul {
   list-style: none;
+}
+button{
+  cursor: pointer;
 }
 
 .container{ 

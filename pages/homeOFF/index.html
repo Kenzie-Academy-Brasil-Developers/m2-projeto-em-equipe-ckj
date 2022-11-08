@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles/reset.css">
+    <link rel="stylesheet" href="/styles/globalStyle.css">
+    <link rel="stylesheet" href="/styles/buttons.css">
+    <link rel="stylesheet" href="/styles/gaps.css">
+    <link rel="stylesheet" href="/styles/margins.css">
+    <link rel="stylesheet" href="/styles/positions.css">
+    <link rel="stylesheet" href="/styles/modais.css">
+    <link rel="stylesheet" href="index.css">
+    <title>Home Page</title>
+</head>
+<body>
+    <header>
+        <div class="header-itens">
+            <div>
+                <h1 class="title">KenziePets</h1>
+            </div>
+            <div>
+                <img id="img-vector" class="hidden-vec" src="/assets/img/Vector.svg" alt="">
+                <div class="flex gap-7 hidden-button">
+                    <button class="botton-register-home ">Register</button>
+                    <button class="button-login-home">Login</button>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main>
+        <section class="">
+            <ul id="ul-listAllPets" class="flex gap-4 wrap container-ul m-auto">
+                <li class="cards-pets">
+                    <div class="flex flex-col">
+                        <img src="/assets/img/cachorrinho1.svg" alt="cachorrinho">
+                        <h3 class="name-pet">Bidu</h3>
+                        <span class="type-pet">cachorro</span>
+                    </div>
+                </li>
+                <li><img src="/assets/img/gatinho1.svg" alt="gatinho"></li>
+                <li><img src="/assets/img/cachorrinho2.svg" alt="cachorrinho"></li>
+                <li><img src="/assets/img/gatinho2.svg" alt="gatinho"></li>
+                <li><img src="/assets/img/cachorrinho3.svg" alt="cachorrinho"></li>
+                <li><img src="/assets/img/gatinho3.svg" alt="gatinho"></li>
+            </ul>
+        </section>
+    </main>
+
+    <footer class="flex items-center justify-center">
+        <div>
+            <p>KenziePets | Todos os Direitos Reservados</p>
+        </div>
+    </footer>
+    <script type="module" src="index.js"></script>
+</body>
+</html>

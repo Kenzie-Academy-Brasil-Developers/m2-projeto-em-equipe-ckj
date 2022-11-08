@@ -1,3 +1,6 @@
+.m-auto{
+    margin: 0 auto;
+}
 .m-0{
     margin: var(--size-0);
 }
