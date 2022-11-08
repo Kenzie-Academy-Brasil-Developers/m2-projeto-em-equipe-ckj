@@ -1,0 +1,24 @@
+.botton-register-home{
+    background-color: var(--white-fixed);
+    color: var(--brand100);
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--radius-2);
+    border: solid 1px var(--brand100);
+    font-size: var(--size-10);
+    font-weight: var(--font-weight-1);
+    padding: 0.25rem 1.5rem 0.25rem 1.5rem;
+}
+.button-login-home{
+    background-color: var(--brand100);
+    color: var(--white-fixed);
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--radius-2);
+    border: solid 1px var(--brand100);
+    font-size: var(--size-10);
+    font-weight: var(--font-weight-1);
+    padding: 0.25rem 1.5rem 0.25rem 1.5rem;
+}
