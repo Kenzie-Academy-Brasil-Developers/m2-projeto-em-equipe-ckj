@@ -37,7 +37,6 @@ function openModalRegister(){
     const buttonModal = document.createElement('button')
     const infosModalPosition = document.createElement('div')
     const infosModal = document.createElement('span')
-    const linkLoginModal = document.createElement('a')
     const bottomModal = document.createElement('div')
 
     backgroundModal.classList = 'background-modal'
@@ -83,12 +82,9 @@ function openModalRegister(){
     buttonModal.type = 'submit'
     buttonModal.innerText = 'Cadastrar'
     
-    linkLoginModal.classList = ''
-    linkLoginModal.href = ''
-    linkLoginModal.innerText = ' Clique aqui para logar.'
 
     infosModal.classList = 'info-modal-footer'
-    infosModal.innerText = 'Já tem cadastro?'
+    infosModal.innerHTML = '<span class="info-modal-footer">Já tem cadastro? <a href="">Clique aqui</a> para logar</span>'
 
     bottomModal.classList = 'div-purple-bottom'
 
@@ -96,7 +92,6 @@ function openModalRegister(){
     topModal.appendChild(imgCloseModal)
     titleModalPosition.appendChild(titleModal)
     formModal.append(nameInputModal, emailInputModal, senhaInputModal, avatarInputModal, buttonModal)
-    infosModal.appendChild(linkLoginModal)
     infosModalPosition.appendChild(infosModal)
     containModal.append(titleModalPosition, formModal, infosModalPosition)
     setModal.append(topModal, containModal, bottomModal)
