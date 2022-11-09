@@ -22,6 +22,7 @@ async function requestAllPets (){
 
 export{requestAllPets,}
 
+                //Cadastro
 
 async function requestSingUp (user){
     try{
