@@ -1,4 +1,5 @@
 import{requestAllPets} from "/scripts/requests.js"
+import {openModalRegister, openModalLogin} from "/scripts/modais.js"
 
 const ulList = document.getElementById('ul-listAllPets')
 ulList.innerHTML = ''
@@ -39,3 +40,40 @@ function buttonsHeader(){
 
 buttonsHeader()
 
+
+function showModalRegister(){
+    const modalButton = document.querySelector('.botton-register-home')
+    const mainContainer = document.getElementById('point-modal')
+
+    modalButton.addEventListener('click', (event) => {
+        event.preventDefault()
+        console.log("click")
+        const telaModal = openModalRegister()
+        mainContainer.appendChild(telaModal)
+        closeModal()
+    })
+}
+
+function showModalLogin(){
+    const modalButton = document.querySelector('.button-login-home')
+    const mainContainer = document.getElementById('point-modal')
+
+    modalButton.addEventListener('click', (event) => {
+        event.preventDefault()
+        console.log("click")
+        const telaModal = openModalLogin()
+        mainContainer.appendChild(telaModal)
+        closeModal()
+    })
+}
+
+
+function closeModal(){
+    const modalClose = document.getElementById('close-modal')
+    const campModal = document.getElementById('modal_container')
+    modalClose.addEventListener('click', () =>{
+        campModal.remove()
+    })
+}
+showModalRegister()
+showModalLogin()
