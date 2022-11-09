@@ -20,6 +20,10 @@ async function requestAllPets (){
     }
 }
 
+
+export{requestAllPets,}
+
+
 async function requestSingUp (user){
     try{
         const request = await fetch(baseUrl + "users", {
@@ -41,3 +45,4 @@ async function requestSingUp (user){
 }
 
 export{requestAllPets,}
+
