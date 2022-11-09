@@ -1,5 +1,5 @@
 import{requestAllPets} from "/scripts/requests.js"
-import {openModalRegister, openModalLogin} from "/scripts/modais.js"
+import {openModalRegister, openModalLogin} from "/scripts/modaisHome.js"
 
 const ulList = document.getElementById('ul-listAllPets')
 ulList.innerHTML = ''
