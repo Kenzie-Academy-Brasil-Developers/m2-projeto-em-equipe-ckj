@@ -1,3 +1,4 @@
+import {requestSingUp,} from './requests.js'
 /*  
 <section class="background-modal">
         <div class="modal-register ">
@@ -38,6 +39,16 @@ function openModalRegister(){
     const infosModalPosition = document.createElement('div')
     const infosModal = document.createElement('span')
     const bottomModal = document.createElement('div')
+
+    buttonModal.addEventListener('click',()=>{
+        let obj = {
+            name: nameInputModal.value,
+            email: emailInputModal.value,
+            password: senhaInputModal.value,
+            avatar_url: avatarInputModal.value,
+        }
+        requestSingUp(obj)
+    })
 
     backgroundModal.classList = 'background-modal'
     backgroundModal.id = 'modal_container'
