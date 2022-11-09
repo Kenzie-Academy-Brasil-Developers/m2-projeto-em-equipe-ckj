@@ -1,4 +1,4 @@
-import { readProfile } from "../../scripts/requests.js"
+import { readProfile } from "/scripts/requests.js"
 readProfile()
 
         // MENU MOBILE

@@ -1,4 +1,4 @@
-import { updateProfile , deleteProfile } from "./requests.js"
+import { updateProfile , deleteAccount } from "./requests.js"
 
             // MODAL ATUALIZAR PERFIL
 

@@ -66,17 +66,7 @@ li > div > img{
     display: grid;
     place-items: center;
 }
-/*.categories-list {  
-    height: 19rem;
-    display: grid;
-    grid-auto-flow: column;
-    scroll-behavior: auto;
-    gap: 1.2rem;
-    overflow-y: auto;
-    overscroll-behavior-x: contain;
-    scroll-snap-type: x mandatory;
-    scrollbar-width: none;
-}*/
+
 .hidden-vec{
     display: none;
 }
