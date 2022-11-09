@@ -1,0 +1,138 @@
+header{
+
+    height: 80px;
+    padding:  24px 60px;
+}
+
+header > h1{
+    color: var(--brand100);
+    height: var(--size-4);
+    font-family: Open Sans;
+    font-size: var(--size-6);
+    font-weight: var(--font-weight-0)
+
+}
+
+.menu-nav > a{
+    text-decoration: none;
+    border: 1px solid var(--brand100);
+    padding: 7px 24px;
+    border-radius: var(--radius-2);
+    color: var(--brand100);
+}
+
+.menu-nav > button{
+    border: 1px solid var(--brand100);
+    padding: 4px 24px;
+    border-radius: var(--radius-2);
+    color: var(--white-fixed);
+    background-color: var(--brand100);
+}
+
+.btn-container{
+    position: absolute;
+    top: 55px;
+    right: 0;
+}
+
+      
+.img-profile{
+    background-color: var(--brand100);
+    height: 223px;
+}
+
+.img-profile > img{
+    border-radius: 100%;
+    border: 3px solid var(--white-fixed);
+    margin-left: 40%;
+    margin-top: 40px;
+}
+
+.box-data{
+    border: 1px solid var(--box-shadow-color);
+    margin-top: 185px;
+    height: 254px;
+    width: 480px;
+    padding: var(--size-9);
+    border-radius: var(--radius-3);
+}
+
+.box-data h2{
+    color: var(--brand100);
+    font-family: Open Sans;
+    font-size: var(--size-7);
+    font-weight: var(--font-weight-0);
+    text-align: center;
+  
+}
+.data{
+    color: var(--brand100);
+    gap: 10px;
+}
+
+.box-btn{
+    margin-top: 50px;
+    margin-right: 60px;
+    
+}
+
+.btn-update{
+    font-family: Open Sans;
+    font-size: var( --size-11);
+    font-weight: var(--font-weight-1);
+    background-color: var(--brand100);
+    color: var(--white-fixed);
+    border-radius: var(--radius-2);
+    border: 1px solid var(--brand100);
+    padding: 4px 16px;
+
+}
+
+.btn-delete{
+    font-family: Open Sans;
+    font-size: 14px;
+    font-weight:  var(--font-weight-1);
+    padding: 4px 12px;
+    background-color: var(--white-fixed);
+    color: var(--alert100);
+    border-radius: var(--radius-2);
+    border-radius:var(--radius-2);
+    border: 1px solid var(--alert100);
+}
+ footer{
+    width: 100%;
+    height: 3rem;
+    background-color: var(--footer-color) ;
+    color: var(--brand100);
+    position: absolute;
+    bottom: 0;
+}
+
+        /* MOBILE */
+
+@media (max-width: 768px){
+    .menu-mobile{
+        display: none;
+    }
+    .btn-container{
+        display: block;
+        top:0;
+        position: unset;
+    }
+   
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
