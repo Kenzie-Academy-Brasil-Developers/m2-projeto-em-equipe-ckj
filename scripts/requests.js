@@ -20,7 +20,7 @@ async function requestAllPets (){
     }
 }
 
-export{requestAllPets,}
+
 
 
 async function requestSingUp (user){
@@ -67,12 +67,12 @@ async function readProfile(){
     }
 }
 
-export{readProfile,}
+
 
             // ATUALIZAR PERFIL
 
 async function updateProfile(data){
-    const token   = localStorage.getItem("token") 
+    const token   = localStorage.getItem("token")
     try{
         const request = await fetch(baseUrl + "users/profile", {
             method: "POST",
@@ -92,7 +92,7 @@ async function updateProfile(data){
     }
 }
 
-export{updateProfile,}
+
 
             // DELETAR CONTA DO PERFIL
 
@@ -116,4 +116,5 @@ async function deleteAccount(){
     }
 }
 
-export{deleteAccount,}
+
+export{requestAllPets,updateProfile, readProfile,deleteAccount, requestSingUp}
