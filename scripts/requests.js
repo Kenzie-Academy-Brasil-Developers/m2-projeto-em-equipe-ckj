@@ -43,7 +43,7 @@ async function requestSingUp (user){
     }
 }
 
-export{requestAllPets,}
+
 
                 // VER PERFIL
 
