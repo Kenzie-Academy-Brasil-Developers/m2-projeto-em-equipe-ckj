@@ -1,5 +1,6 @@
 import { readProfile } from "/scripts/requests.js"
 import { logout } from "../../scripts/logout.js"
+import { modalNewPet } from "/scripts/modais.js"
 
 readProfile()
 logout("logout")
@@ -66,3 +67,19 @@ function renderDataProfile(element){
 }
 
 renderDataProfile()
+
+//cadastrar pet
+
+
+function buttonNewPet(){
+  const btnNewPet = document.querySelector('#newPet')
+  const body = document.querySelector('body')
+  btnNewPet.addEventListener('click',()=>{
+    console.log('click')
+    
+    const newModal = modalNewPet()
+    body.appendChild(newModal)
+  })
+
+}
+buttonNewPet()
