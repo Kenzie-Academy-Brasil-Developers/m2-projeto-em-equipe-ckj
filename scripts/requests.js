@@ -63,7 +63,7 @@ async function requestLogin (user){
             const response = await request.json()
             const local = localStorage.setItem("token", response.token)
             
-            window.location.replace('../pages/homeON/index.html')
+            window.location.replace('../homeON/index.html')
             return response
         }
     }catch(err){

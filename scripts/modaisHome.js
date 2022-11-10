@@ -185,7 +185,7 @@ function openModalLogin(){
 
     if(buttonModal){
 
-        buttonModal.addEventListener("submit" , async (e) => {
+        buttonModal.addEventListener("click" , async (e) => {
             console.log("oi")
             e.preventDefault()
             const data = {
