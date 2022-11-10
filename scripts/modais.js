@@ -17,6 +17,7 @@ function updateProfileModal(){
     const footer            = document.createElement("div")
 
     background.classList.add('background-modal')
+    background.id = 'modal_container'
     container.classList.add('container-modal')
 
 

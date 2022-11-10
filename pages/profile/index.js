@@ -73,10 +73,10 @@ renderDataProfile()
 
 function buttonNewPet(){
   const btnNewPet = document.querySelector('#newPet')
-  const body = document.querySelector('body')
+  const body = document.querySelector('#pont-Modalis')
   btnNewPet.addEventListener('click',()=>{
-    console.log('click')
-    
+    console.log('click') 
+
     const newModal = modalNewPet()
     body.appendChild(newModal)
   })
