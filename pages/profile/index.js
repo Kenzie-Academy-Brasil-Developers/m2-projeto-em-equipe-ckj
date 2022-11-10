@@ -1,7 +1,7 @@
-import { readProfile } from "/scripts/requests.js"
+// import { readProfile } from "/scripts/requests.js"
 import { logout } from "../../scripts/logout.js"
 
-readProfile()
+// readProfile()
 logout("logout")
 
         // MENU MOBILE
@@ -25,7 +25,8 @@ buttonsHeader()
       // RENDERIZAR DADOS DO PERFIL
 
 function renderDataProfile(element){
-  const aside      = document.querySelector('#aside')
+
+  const aside       = document.querySelector('#aside')
   const boxProfile = document.createElement('div')
   const imgProfile = document.createElement('img')
   const boxData    = document.createElement('div')

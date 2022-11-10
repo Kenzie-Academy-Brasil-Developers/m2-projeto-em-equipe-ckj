@@ -5,7 +5,7 @@ async function requestAllPets (){
     try{
         const request = await fetch(baseUrl + "pets", {
             method: "GET",
-            Headers: {
+            headers: {
                 "Content-Type": "application/json"
             }
         })
@@ -26,7 +26,7 @@ async function requestSingUp (user){
     try{
         const request = await fetch(baseUrl + "users", {
             method: "POST",
-            Headers: {
+            headers: {
                 "Content-Type": "application/json"
             },
             body:JSON.stringify(user)
@@ -48,7 +48,7 @@ async function requestLogin (user){
     try{
         const request = await fetch(baseUrl + "session/login", {
             method: "POST",
-            Headers: {
+            headers: {
                 "Content-Type": "application/json"
             },
             body:JSON.stringify(user)
@@ -75,7 +75,7 @@ async function readProfile(){
     try{
         const request = await fetch(baseUrl + "users/profile", {
             method: "GET",
-            Headers: {
+            headers: {
                 "Content-Type": "application/json"
             },
         })
@@ -99,7 +99,7 @@ async function updateProfile(data){
     try{
         const request = await fetch(baseUrl + "users/profile", {
             method: "POST",
-            Headers: {
+            headers: {
                 "Content-Type": "application/json"
             },
             body:JSON.stringify(data)
@@ -124,7 +124,7 @@ async function deleteAccount(){
     try{
         const request = await fetch(baseUrl + "users/profile", {
             method: "DELETE",
-            Headers: {
+            headers: {
                 "Content-Type": "application/json"
             },
         })
@@ -140,4 +140,4 @@ async function deleteAccount(){
 }
 
 
-export{requestAllPets,updateProfile, readProfile,deleteAccount, requestSingUp, requestLogin }
+export{requestAllPets, readProfile, updateProfile, deleteAccount, requestSingUp, requestLogin }

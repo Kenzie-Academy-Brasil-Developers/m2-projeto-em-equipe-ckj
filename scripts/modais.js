@@ -1,15 +1,16 @@
-import { updateProfile , deleteAccount } from "./requests.js"
+// import { updateProfile , deleteAccount } from "./requests.js"
 
             // MODAL ATUALIZAR PERFIL
-
+ const body = document.querySelector('body')
 function updateProfileModal(){
+    
     const background        = document.createElement("div")
     const container         = document.createElement("div")
     const header            = document.createElement("div")
     const btnClose          = document.createElement("img")
     const cardBox           = document.createElement("div")
     const h2                = document.createElement("h2")
-    const boxInputs         = document.createElement("div")
+    const boxInputs         = document.createElement("form")
     const inputName         = document.createElement('input')
     const inputEmail        = document.createElement('input')
     const inputAvatar       = document.createElement('input')
@@ -17,8 +18,8 @@ function updateProfileModal(){
     const footer            = document.createElement("div")
 
     background.classList.add('background-modal')
-    container.classList.add('container-modal')
-
+    container.classList = 'container-modal position-modal-itens'
+    cardBox.classList.add('card-box')
 
     h2.innerText = "Atualizar perfil"
     inputName.type = "text"
@@ -27,6 +28,8 @@ function updateProfileModal(){
     inputEmail.placeholder = "E-mail"
     inputAvatar.type = "image"
     inputAvatar.placeholder = "Avatar"
+    btnClose.src = "/assets/img/close-Modal.svg" 
+    btnUpdate.innerText = "Atualizar"
 
     container.append(header,cardBox, footer)
     header.appendChild(btnClose)
@@ -34,33 +37,37 @@ function updateProfileModal(){
     boxInputs.append(inputName,inputEmail,inputAvatar,btnUpdate)
     background.appendChild(container)
     
-    btnUpdate.addEventListener('click', async (e) =>{
-        e.preventDefault()
+    // btnUpdate.addEventListener('click', async (e) =>{
+    //     e.preventDefault()
 
-        const data = {
-            name: inputName.value,
-            avatar_url: inputAvatar.value,
-        }
-        console.log(data)
-        await updateProfile(data)
-    })
+    //     const data = {
+    //         name: inputName.value,
+    //         avatar_url: inputAvatar.value,
+    //     }
+    //     console.log(data)
+    //     await updateProfile(data)
+    // })
 
     btnClose.addEventListener('click' , (e) =>{
         e.preventDefault()
         background.remove()
     })
-}
 
-export function openModalUpdateProfile(){
+    return background
+}
+ function openModalUpdateProfile(){
     const btnUpdateID  = document.getElementById('btn_update')
     if(btnUpdateID) {
         btnUpdateID.addEventListener('click' , (e) =>{
             e.preventDefault()
-            updateProfileModal()
+            const modal = updateProfileModal()
+            body.appendChild(modal)
+            
         })
     }
    
  }
+ openModalUpdateProfile()
 
         //  MODAL DELETAR CONTA DO PERFIL
 
@@ -77,7 +84,11 @@ function deleteAccountModal(){
     h2.innerText        = "Deseja mesmo deletar sua conta?"
     btnReject.innerText = "Não desejo deletar minha conta"
     btnDelete.innerText = "Quero deletar minha conta"
+    btnClose.src = "/assets/img/close-Modal.svg" 
 
+    background.classList.add('background-modal')
+    container.classList = 'container-modal position-modal-itens'
+    cardBox.classList.add('card-box')
 
     container.append(header,cardBox)
     header.appendChild(btnClose)
@@ -89,15 +100,20 @@ function deleteAccountModal(){
         e.preventDefault()
         background.remove()
     })
+  return background
 }
 
-export function openModaldeleteAccount(){
+ function openModaldeleteAccount(){
     const btnDeleteAccount  = document.getElementById('btn_delete_account')
     if(btnDeleteAccount) {
         btnDeleteAccount.addEventListener('click' , (e) =>{
             e.preventDefault()
-            deleteAccountModal()
+            const modal = deleteAccountModal()
+            body.appendChild(modal)
+            
         })
     }
    
  }
+
+ openModaldeleteAccount()
