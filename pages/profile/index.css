@@ -1,10 +1,12 @@
-header{
-
+.header{
+ 
     height: 80px;
     padding:  24px 60px;
+    justify-content: space-between;
+  
 }
 
-header > h1{
+.header > h1{
     color: var(--brand100);
     height: var(--size-4);
     font-family: Open Sans;
@@ -13,20 +15,43 @@ header > h1{
 
 }
 
-.menu-nav > a{
-    text-decoration: none;
-    border: 1px solid var(--brand100);
-    padding: 7px 24px;
-    border-radius: var(--radius-2);
-    color: var(--brand100);
+.hidden-vec{
+    display: none;
 }
 
-.menu-nav > button{
-    border: 1px solid var(--brand100);
-    padding: 4px 24px;
+.hidden-button{
+    display: flex;
+}
+nav{
+    display: flex;
+
+}
+
+.button-home{
+    background-color: var(--white-fixed);
+    color: var(--brand100);
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
     border-radius: var(--radius-2);
-    color: var(--white-fixed);
+    border: solid 1px var(--brand100);
+    font-size: var(--size-10);
+    font-weight: var(--font-weight-1);
+    padding: 0.25rem 1.5rem 0.25rem 1.5rem;
+    text-decoration: none;
+}
+
+.button-logout{
     background-color: var(--brand100);
+    color: var(--white-fixed);
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--radius-2);
+    border: solid 1px var(--brand100);
+    font-size: var(--size-10);
+    font-weight: var(--font-weight-1);
+    padding: 0.25rem 1.5rem 0.25rem 1.5rem;
 }
 
 .btn-container{
@@ -72,7 +97,7 @@ header > h1{
 
 .box-btn{
     margin-top: 50px;
-    margin-right: 60px;
+    margin-right: 72px;
     
 }
 
@@ -110,16 +135,16 @@ header > h1{
 
         /* MOBILE */
 
-@media (max-width: 768px){
-    .menu-mobile{
-        display: none;
-    }
-    .btn-container{
+@media(max-width: 700px){
+    .hidden-vec{
         display: block;
-        top:0;
-        position: unset;
+        
     }
-   
+    .hidden-button{
+        display: none;
+        
+    }
+
 }
 
 

@@ -15,16 +15,17 @@
     <title>Dashboard Profile</title>
 </head>
 <body>
-    <header class="flex justify-between">
-        <h1>KenziePets</h1>
-        <div class="box-menu-mobile">
-            <img class="menu-mobile block btn-container" src="/assets/img/Vector.svg" alt="">
-            <img class="menu-mobile block btn-container" src="/assets/img/Vector (X).svg" alt="">
+    <header>
+        <div class="header flex">
+                <h1>KenziePets</h1>
+            <div>
+                <img id="img-vector" class="hidden-vec" src="/assets/img/Vector.svg" alt="">
+                <nav class="flex gap-7 hidden-button">
+                    <a href="/pages/homeON/index.html" class="button-home">Home</a>
+                    <button id="logout" class="button-logout">Logout</button>
+                </nav>
+            </div>
         </div>
-        <nav class="menu-nav flex gap-9">
-            <a href="">Home</a>
-            <button>Logout</button>
-        </nav>
     </header>
     <aside id="aside">
         <!-- <div class="img-profile">
