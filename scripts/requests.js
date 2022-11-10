@@ -5,7 +5,7 @@ async function requestAllPets (){
     try{
         const request = await fetch(baseUrl + "pets", {
             method: "GET",
-            Headers: {
+            headers: {
                 "Content-Type": "application/json"
             }
         })
@@ -19,16 +19,16 @@ async function requestAllPets (){
             console.log(err)
     }
 }
+             
 
-export{requestAllPets,}
+                // CADASTRO
 
-                //Cadastro
 
 async function requestSingUp (user){
     try{
         const request = await fetch(baseUrl + "users", {
             method: "POST",
-            Headers: {
+            headers: {
                 "Content-Type": "application/json"
             },
             body:JSON.stringify(user)
@@ -36,6 +36,7 @@ async function requestSingUp (user){
 
         if(request.ok){
             const response = await request.json()
+            console.log(response)
 
             return response
         }
@@ -43,6 +44,31 @@ async function requestSingUp (user){
             console.log(err)
     }
 }
+
+                // LOGIN
+                
+async function requestLogin (user){
+    try{
+        const request = await fetch(baseUrl + "session/login", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body:JSON.stringify(user)
+        })
+
+        if(request.ok){
+            const response = await request.json()
+            const local = localStorage.setItem("token", response.token)
+            console.log(response.token)
+
+            return response
+        }
+    }catch(err){
+            console.log(err)
+    }
+}
+
 
 
 
@@ -53,7 +79,7 @@ async function readProfile(){
     try{
         const request = await fetch(baseUrl + "users/profile", {
             method: "GET",
-            Headers: {
+            headers: {
                 "Content-Type": "application/json"
             },
         })
@@ -68,16 +94,16 @@ async function readProfile(){
     }
 }
 
-export{readProfile,}
+
 
             // ATUALIZAR PERFIL
 
 async function updateProfile(data){
-    const token   = localStorage.getItem("token") 
+    const token   = localStorage.getItem("token")
     try{
         const request = await fetch(baseUrl + "users/profile", {
             method: "POST",
-            Headers: {
+            headers: {
                 "Content-Type": "application/json"
             },
             body:JSON.stringify(data)
@@ -93,7 +119,7 @@ async function updateProfile(data){
     }
 }
 
-export{updateProfile,}
+
 
             // DELETAR CONTA DO PERFIL
 
@@ -102,7 +128,7 @@ async function deleteAccount(){
     try{
         const request = await fetch(baseUrl + "users/profile", {
             method: "DELETE",
-            Headers: {
+            headers: {
                 "Content-Type": "application/json"
             },
         })
@@ -117,4 +143,5 @@ async function deleteAccount(){
     }
 }
 
-export{deleteAccount,}
+
+export{requestAllPets,updateProfile, readProfile,deleteAccount, requestSingUp, requestLogin }
