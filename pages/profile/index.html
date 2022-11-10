@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles/reset.css">
+    <link rel="stylesheet" href="/styles/globalStyle.css">
+    <link rel="stylesheet" href="/styles/buttons.css">
+    <link rel="stylesheet" href="/styles/gaps.css">
+    <link rel="stylesheet" href="/styles/margins.css">
+    <link rel="stylesheet" href="/styles/modais.css">
+    <link rel="stylesheet" href="/styles/positions.css">
+    <link rel="stylesheet" href="/pages/profile/index.css">
+    <title>Dashboard Profile</title>
+</head>
+<body id="pont-Modalis">
+    <header>
+        <div class="header flex">
+                <h1>KenziePets</h1>
+            <div>
+                <img id="img-vector" class="hidden-vec" src="/assets/img/Vector.svg" alt="">
+                <nav class="flex gap-7 hidden-button">
+                    <a href="/pages/homeON/index.html" class="button-home">Home</a>
+                    <button id="logout" class="button-logout">Logout</button>
+                </nav>
+            </div>
+        </div>
+    </header>
+    <aside id="aside">
+        <!-- <div class="img-profile">
+            <img src="/assets/img/userProfile.svg" alt="imagem de perfil">
+        </div>
+        <div class="box-data container flex flex-col gap-12">
+            <h2>Dados pessoais</h2>
+            <div class="data flex flex-col">
+                <span>Nome:</span>
+                <span>E-mail:</span>
+                <span>Data de nascimento:</span>
+            </div>
+            <div class="box-btn flex justify-end gap-7">
+                <button id="btn_update" class="btn-update">Atualizar informações</button>
+                <button id = "btn_delete_account" class="btn-delete">Deletar conta</button>
+            </div>
+        </div> -->
+    </aside>
+    <div id="pets-profile">
+        <div class="btn-singPetsd">
+            <button id="newPet" type="button">Cadastrar novo pet</button>
+        </div>
+    </div>
+   <!-- <ul class="container-card-profile">
+            <li class="flex gap-5 ">
+                <div>
+                    <img src="/assets/img/cachorrinho1.svg" alt="">
+                </div>
+                <div class="flex flex-col gap-13 justify-center, items-start mt-7">
+                    <div class="flex">
+                        <p class="texts-cards">Nome:</p>
+                        <p class="texts-cards-infos">Bidu</p>
+                    </div>
+                    <div class="flex">
+                        <p class="texts-cards">Espécie:</p>
+                        <p class="texts-cards-infos">Cachorro</p>
+                    </div>
+                    <div class="flex">
+                        <p class="texts-cards">Adotável:</p>
+                        <p class="texts-cards-infos">Sim</p>
+                    </div>
+                    <button class="profile-adote">Atualizar</button>
+                </div>
+            </li>
+        </ul>-->
+    <footer class="flex items-center justify-center">
+        <div>
+            <p>KenziePets | Todos os Direitos Reservados</p>
+        </div>
+    </footer>
+    <script type="module" src="index.js"></script>
+</body>
+</html>

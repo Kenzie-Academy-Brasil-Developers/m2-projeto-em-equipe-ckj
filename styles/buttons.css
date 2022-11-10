@@ -22,3 +22,12 @@
     font-weight: var(--font-weight-1);
     padding: 0.25rem 1.5rem 0.25rem 1.5rem;
 }
+.profile-adote{
+    background-color: var(--brand100);
+    color: var(--white-fixed);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: var(--radius-2);
+    padding: 0.25rem 1rem;
+}

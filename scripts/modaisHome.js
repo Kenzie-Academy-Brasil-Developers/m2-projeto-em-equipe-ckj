@@ -1,3 +1,4 @@
+import {requestSingUp, requestLogin} from './requests.js'
 /*  
 <section class="background-modal">
         <div class="modal-register ">
@@ -37,8 +38,8 @@ function openModalRegister(){
     const buttonModal = document.createElement('button')
     const infosModalPosition = document.createElement('div')
     const infosModal = document.createElement('span')
-    const linkLoginModal = document.createElement('a')
     const bottomModal = document.createElement('div')
+
 
     backgroundModal.classList = 'background-modal'
     backgroundModal.id = 'modal_container'
@@ -83,12 +84,9 @@ function openModalRegister(){
     buttonModal.type = 'submit'
     buttonModal.innerText = 'Cadastrar'
     
-    linkLoginModal.classList = ''
-    linkLoginModal.href = ''
-    linkLoginModal.innerText = ' Clique aqui para logar.'
 
     infosModal.classList = 'info-modal-footer'
-    infosModal.innerText = 'Já tem cadastro?'
+    infosModal.innerHTML = '<span class="info-modal-footer">Já tem cadastro? <a href="">Clique aqui</a> para logar</span>'
 
     bottomModal.classList = 'div-purple-bottom'
 
@@ -96,16 +94,30 @@ function openModalRegister(){
     topModal.appendChild(imgCloseModal)
     titleModalPosition.appendChild(titleModal)
     formModal.append(nameInputModal, emailInputModal, senhaInputModal, avatarInputModal, buttonModal)
-    infosModal.appendChild(linkLoginModal)
     infosModalPosition.appendChild(infosModal)
     containModal.append(titleModalPosition, formModal, infosModalPosition)
     setModal.append(topModal, containModal, bottomModal)
 
     backgroundModal.appendChild(setModal)
 
+
+    buttonModal.addEventListener('click',(e)=>{
+        e.preventDefault()
+        let obj = {
+            name: nameInputModal.value,
+            email: emailInputModal.value,
+            password: senhaInputModal.value,
+            avatar_url: avatarInputModal.value,
+        }
+      
+        requestSingUp(obj)
+    })
+
     return backgroundModal
 
 }
+
+
 
 function openModalLogin(){
     const backgroundModal = document.createElement('section')
@@ -122,6 +134,7 @@ function openModalLogin(){
     const infosModalPosition = document.createElement('div')
     const infosModal = document.createElement('span')
     const bottomModal = document.createElement('div')
+
 
     backgroundModal.classList = 'background-modal'
     backgroundModal.id = 'modal_container'
@@ -171,6 +184,22 @@ function openModalLogin(){
     setModal.append(topModal, containModal, bottomModal)
 
     backgroundModal.appendChild(setModal)
+
+    if(buttonModal){
+
+        buttonModal.addEventListener("click" , async (e) => {
+            console.log("oi")
+            e.preventDefault()
+            const data = {
+    
+            email:emailInputModal.value,
+            password:senhaInputModal.value,
+         
+        }
+        console.log(data)
+            await requestLogin(data)
+        })
+    }
 
     return backgroundModal
 
