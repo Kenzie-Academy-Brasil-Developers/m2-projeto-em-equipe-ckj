@@ -1,4 +1,4 @@
-import {requestSingUp,} from './requests.js'
+import {requestSingUp, requestLogin} from './requests.js'
 /*  
 <section class="background-modal">
         <div class="modal-register ">
@@ -48,6 +48,7 @@ function openModalRegister(){
             password: senhaInputModal.value,
             avatar_url: avatarInputModal.value,
         }
+      
         requestSingUp(obj)
     })
 
@@ -133,6 +134,18 @@ function openModalLogin(){
     const infosModalPosition = document.createElement('div')
     const infosModal = document.createElement('span')
     const bottomModal = document.createElement('div')
+
+    buttonModal.addEventListener("submit" , async (e) => {
+        console.log("oi")
+        e.preventDefault()
+        const data = {
+
+        email:emailInputModal.value,
+        password:senhaInputModal.value,
+     
+    }
+        await requestLogin(data)
+    })
 
     backgroundModal.classList = 'background-modal'
     backgroundModal.id = 'modal_container'
