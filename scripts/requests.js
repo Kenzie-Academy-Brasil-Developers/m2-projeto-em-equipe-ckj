@@ -81,12 +81,13 @@ async function requestLogin (user){
                 // VER PERFIL
 
 async function readProfile(){
-    const token   = localStorage.getItem("token") 
+    // const token   = localStorage.getItem("token") 
     try{
         const request = await fetch(baseUrl + "users/profile", {
             method: "GET",
             headers: {
-                "Content-Type": "application/json"
+                "Content-Type": "application/json", 
+                Authorization: `Bearer ${token}`
             },
         })
 
@@ -105,12 +106,13 @@ async function readProfile(){
             // ATUALIZAR PERFIL
 
 async function updateProfile(data){
-    const token   = localStorage.getItem("token")
+    // const token   = localStorage.getItem("token")
     try{
         const request = await fetch(baseUrl + "users/profile", {
-            method: "POST",
+            method: "PATCH",
             headers: {
-                "Content-Type": "application/json"
+                "Content-Type": "application/json",
+                Authorization: `Bearer ${token}`
             },
             body:JSON.stringify(data)
         })
@@ -130,12 +132,13 @@ async function updateProfile(data){
             // DELETAR CONTA DO PERFIL
 
 async function deleteAccount(){
-    const token   = localStorage.getItem("token") 
+    // const token   = localStorage.getItem("token") 
     try{
         const request = await fetch(baseUrl + "users/profile", {
             method: "DELETE",
             headers: {
-                "Content-Type": "application/json"
+                "Content-Type": "application/json",
+                Authorization: `Bearer ${token}`
             },
         })
 
@@ -150,4 +153,4 @@ async function deleteAccount(){
 }
 
 
-export{requestAllPets,updateProfile, readProfile,deleteAccount, requestSingUp, requestLogin }
+export{requestAllPets, readProfile, updateProfile, deleteAccount, requestSingUp, requestLogin }

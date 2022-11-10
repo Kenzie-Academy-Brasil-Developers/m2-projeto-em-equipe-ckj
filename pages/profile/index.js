@@ -1,8 +1,12 @@
 import { readProfile } from "/scripts/requests.js"
 import { logout } from "../../scripts/logout.js"
+
+import {updateProfileModal ,deleteAccountModal} from "../../scripts/modais.js"
+
+
 import { modalNewPet } from "/scripts/modais.js"
 
-readProfile()
+
 logout("logout")
 
         // MENU MOBILE
@@ -24,9 +28,11 @@ function buttonsHeader(){
 buttonsHeader()
 
       // RENDERIZAR DADOS DO PERFIL
+const body = document.querySelector('body')
+async function renderDataProfile(){
+  const element = await readProfile()
 
-function renderDataProfile(element){
-  const aside      = document.querySelector('#aside')
+  const aside       = document.querySelector('#aside')
   const boxProfile = document.createElement('div')
   const imgProfile = document.createElement('img')
   const boxData    = document.createElement('div')
@@ -35,7 +41,7 @@ function renderDataProfile(element){
   const userName   = document.createElement('span')
   const email      = document.createElement('span')
   const boxBtn     = document.createElement('div')
-  const btnUpdate = document.createElement('button')
+  const btnUpdate  = document.createElement('button')
   const btnDelete  = document.createElement('button')
 
   boxProfile.classList.add('img-profile')
@@ -44,6 +50,7 @@ function renderDataProfile(element){
   boxBtn.classList  = "box-btn flex justify-end gap-7"
   btnUpdate.classList.add('btn-update')
   btnDelete.classList.add('btn-delete')
+
 
   imgProfile.src = element.avatar_url
   imgProfile.alt = "imagem de perfil"
@@ -63,7 +70,21 @@ function renderDataProfile(element){
   boxBtn.append(btnUpdate, btnDelete)
   aside.append(boxProfile,boxData)
 
+  btnUpdate.addEventListener('click' , (e) =>{
+    e.preventDefault()
+    const modal = updateProfileModal()
+    body.appendChild(modal)
+    
+})
 
+btnDelete.addEventListener('click' , (e) =>{
+  e.preventDefault()
+  const modal = deleteAccountModal()
+  body.appendChild(modal)
+  
+})
+
+ return aside
 }
 
 renderDataProfile()
