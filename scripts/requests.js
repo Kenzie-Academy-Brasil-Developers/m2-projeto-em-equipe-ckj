@@ -20,8 +20,7 @@ async function requestAllPets (){
     }
 }
 
-
-
+                // CADASTRO
 
 async function requestSingUp (user){
     try{
@@ -42,6 +41,30 @@ async function requestSingUp (user){
             console.log(err)
     }
 }
+
+                // LOGIN
+                
+async function requestLogin (user){
+    try{
+        const request = await fetch(baseUrl + "session/login", {
+            method: "POST",
+            Headers: {
+                "Content-Type": "application/json"
+            },
+            body:JSON.stringify(user)
+        })
+
+        if(request.ok){
+            const response = await request.json()
+            localStorage.setItem("token", response.token)
+
+            return response
+        }
+    }catch(err){
+            console.log(err)
+    }
+}
+
 
 
 
@@ -117,4 +140,4 @@ async function deleteAccount(){
 }
 
 
-export{requestAllPets,updateProfile, readProfile,deleteAccount, requestSingUp}
+export{requestAllPets,updateProfile, readProfile,deleteAccount, requestSingUp, requestLogin }

@@ -1,13 +1,26 @@
 import { readProfile } from "/scripts/requests.js"
+import { logout } from "../../scripts/logout.js"
+
 readProfile()
+logout("logout")
 
         // MENU MOBILE
+const buttonHeader = document.querySelector('.hidden-vec')
+const modButtons = document.querySelector('.hidden-button')
+const idImgVector = document.getElementById('img-vector')
 
-const btnMobile = document.querySelector('.menu-mobile')
-const btnContainer = document.querySelector('.btn-container')
-btnMobile.addEventListener('click', (e) =>{
-  btnContainer.classList.toggle('hidden')
-})
+
+function buttonsHeader(){
+    console.log("buttonHeader")
+    buttonHeader.addEventListener('click', () =>{
+        console.log("click")
+        modButtons.classList = 'flex gap-7 ' + (modButtons.className.search('hidden-button') == -1 ? 'hidden-button' : 'absolut-buttons' )
+      idImgVector.src =  (modButtons.className.search('hidden') == -1 ? '/assets/img/Vector (X).svg' : '/assets/img/Vector.svg')
+
+    })
+}
+
+buttonsHeader()
 
       // RENDERIZAR DADOS DO PERFIL
 
@@ -20,7 +33,6 @@ function renderDataProfile(element){
   const divData    = document.createElement('div')
   const userName   = document.createElement('span')
   const email      = document.createElement('span')
-  const birthDate  = document.createElement('span')
   const boxBtn     = document.createElement('div')
   const btnUpdate = document.createElement('button')
   const btnDelete  = document.createElement('button')
@@ -32,13 +44,12 @@ function renderDataProfile(element){
   btnUpdate.classList.add('btn-update')
   btnDelete.classList.add('btn-delete')
 
-  // imgProfile.src = element.avatar_url
+  imgProfile.src = element.avatar_url
   imgProfile.alt = "imagem de perfil"
 
   h2.innerText        = "Dados pessoais"
-  // userName.innerText  = `Nome: ${element.name}`
-  // email.innerText     = `E-mail: ${element.email}`
-  // birthDate.innerText = `Data de nascimento: ${element}`
+  userName.innerText  = `Nome: ${element.name}`
+  email.innerText     = `E-mail: ${element.email}`
   btnUpdate.innerText= "Atualizar informações"
   btnDelete.innerText = "Deletar conta"
 
@@ -47,7 +58,7 @@ function renderDataProfile(element){
 
   boxProfile.appendChild(imgProfile)
   boxData.append(h2, divData, boxBtn)
-  divData.append(userName, email, birthDate)
+  divData.append(userName, email)
   boxBtn.append(btnUpdate, btnDelete)
   aside.append(boxProfile,boxData)
 

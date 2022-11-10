@@ -16,7 +16,10 @@ function updateProfileModal(){
     const btnUpdate         = document.createElement("button")
     const footer            = document.createElement("div")
 
-    
+    background.classList.add('background-modal')
+    container.classList.add('container-modal')
+
+
     h2.innerText = "Atualizar perfil"
     inputName.type = "text"
     inputName.placeholder = "Nome"
