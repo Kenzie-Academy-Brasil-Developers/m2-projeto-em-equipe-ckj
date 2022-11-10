@@ -1,5 +1,5 @@
 const baseUrl = "https://m2-api-adot-pet.herokuapp.com/"
-
+const token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2NjgwODUwNjgsImV4cCI6MTY2ODY4OTg2OCwic3ViIjoiYzhhYTBiODctMDEwOS00MjY4LTg5YTktNTllMzZhNDhhNmUxIn0.WCKOfvPvAn1Yeq_9GkezjpO2ewBi-fxogmHRDKT6CfY"
 
 async function requestAllPets (){
     try{
@@ -19,10 +19,13 @@ async function requestAllPets (){
             console.log(err)
     }
 }
+             
 
                 // CADASTRO
 
+
 async function requestSingUp (user){
+    console.log(JSON.stringify(user))
     try{
         const request = await fetch(baseUrl + "users", {
             method: "POST",
@@ -30,11 +33,13 @@ async function requestSingUp (user){
                 "Content-Type": "application/json"
             },
             body:JSON.stringify(user)
+            
         })
 
         if(request.ok){
             const response = await request.json()
-
+            console.log(response)
+            
             return response
         }
     }catch(err){
@@ -56,8 +61,9 @@ async function requestLogin (user){
 
         if(request.ok){
             const response = await request.json()
-            localStorage.setItem("token", response.token)
-
+            const local = localStorage.setItem("token", response.token)
+            
+            window.location.replace('../homeON/index.html')
             return response
         }
     }catch(err){

@@ -1,5 +1,18 @@
 import{requestAllPets} from "/scripts/requests.js"
 
+function profilePage(id){
+    const btnLogout = document.getElementById('profile-page')
+    if(btnLogout){
+        btnLogout.addEventListener('click', (e) =>{
+            window.location.replace("/pages/profile/index.html")
+        })
+    }
+   
+}
+profilePage()
+
+
+
 const ulListON = document.getElementById('ul-listAllPets-ON')
 ulListON.innerHTML = ''
 
@@ -24,3 +37,5 @@ async function renderListPets(){
     });
 }
 renderListPets()
+
+
