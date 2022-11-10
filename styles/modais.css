@@ -116,3 +116,12 @@
     border-radius: var(--radius-2);
     background-color: var(--white-fixed);
 }
+
+.inputs-modal{
+    width: 240px;
+    height: 27px;
+    border-radius: var(--radius-2);
+    border: solid 1px var(--brand200);
+    padding-left: 0.5rem;
+    outline: none;
+}

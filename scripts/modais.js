@@ -1,9 +1,9 @@
-// import { updateProfile , deleteAccount } from "./requests.js"
+import { updateProfile , deleteAccount } from "./requests.js"
 
             // MODAL ATUALIZAR PERFIL
  const body = document.querySelector('body')
-function updateProfileModal(){
-    
+
+export function updateProfileModal(){
     const background        = document.createElement("div")
     const container         = document.createElement("div")
     const header            = document.createElement("div")
@@ -20,13 +20,14 @@ function updateProfileModal(){
     background.classList.add('background-modal')
     container.classList = 'container-modal position-modal-itens'
     cardBox.classList.add('card-box')
+    inputAvatar.classList.add('inputs-modal')
 
     h2.innerText = "Atualizar perfil"
     inputName.type = "text"
     inputName.placeholder = "Nome"
     inputEmail.type = "email"
     inputEmail.placeholder = "E-mail"
-    inputAvatar.type = "image"
+    inputAvatar.type = "url"
     inputAvatar.placeholder = "Avatar"
     btnClose.src = "/assets/img/close-Modal.svg" 
     btnUpdate.innerText = "Atualizar"
@@ -37,16 +38,20 @@ function updateProfileModal(){
     boxInputs.append(inputName,inputEmail,inputAvatar,btnUpdate)
     background.appendChild(container)
     
-    // btnUpdate.addEventListener('click', async (e) =>{
-    //     e.preventDefault()
+    btnUpdate.addEventListener('click', async (e) =>{
+        e.preventDefault()
 
-    //     const data = {
-    //         name: inputName.value,
-    //         avatar_url: inputAvatar.value,
-    //     }
-    //     console.log(data)
-    //     await updateProfile(data)
-    // })
+        const data = {
+            name: inputName.value,
+            avatar_url: inputAvatar.value,
+            email: inputEmail.value
+        }
+        console.log(data)
+       const response =  await updateProfile(data)
+       if(response){
+        body.removeChild(background)
+       }
+    })
 
     btnClose.addEventListener('click' , (e) =>{
         e.preventDefault()
@@ -55,23 +60,23 @@ function updateProfileModal(){
 
     return background
 }
- function openModalUpdateProfile(){
-    const btnUpdateID  = document.getElementById('btn_update')
-    if(btnUpdateID) {
-        btnUpdateID.addEventListener('click' , (e) =>{
-            e.preventDefault()
-            const modal = updateProfileModal()
-            body.appendChild(modal)
+//  function openModalUpdateProfile(){
+//     const btnUpdateID  = document.getElementById('btn_update')
+//     if(btnUpdateID) {
+//         btnUpdateID.addEventListener('click' , (e) =>{
+//             e.preventDefault()
+//             const modal = updateProfileModal()
+//             body.appendChild(modal)
             
-        })
-    }
+//         })
+//     }
    
- }
- openModalUpdateProfile()
+//  }
+//  openModalUpdateProfile()
 
         //  MODAL DELETAR CONTA DO PERFIL
 
-function deleteAccountModal(){
+export function deleteAccountModal(){
     const background        = document.createElement("div")
     const container         = document.createElement("div")
     const header            = document.createElement("div")
@@ -103,17 +108,17 @@ function deleteAccountModal(){
   return background
 }
 
- function openModaldeleteAccount(){
-    const btnDeleteAccount  = document.getElementById('btn_delete_account')
-    if(btnDeleteAccount) {
-        btnDeleteAccount.addEventListener('click' , (e) =>{
-            e.preventDefault()
-            const modal = deleteAccountModal()
-            body.appendChild(modal)
+//  function openModaldeleteAccount(){
+//     const btnDeleteAccount  = document.getElementById('btn_delete_account')
+//     if(btnDeleteAccount) {
+//         btnDeleteAccount.addEventListener('click' , (e) =>{
+//             e.preventDefault()
+//             const modal = deleteAccountModal()
+//             body.appendChild(modal)
             
-        })
-    }
+//         })
+//     }
    
- }
+//  }
 
- openModaldeleteAccount()
+//  openModaldeleteAccount()
