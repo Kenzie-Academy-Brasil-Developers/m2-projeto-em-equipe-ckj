@@ -39,7 +39,7 @@ async function requestSingUp (user){
         if(request.ok){
             const response = await request.json()
             console.log(response)
-
+            
             return response
         }
     }catch(err){
@@ -62,8 +62,8 @@ async function requestLogin (user){
         if(request.ok){
             const response = await request.json()
             const local = localStorage.setItem("token", response.token)
-            console.log(response.token)
-
+            
+            window.location.replace('../pages/homeON/index.html')
             return response
         }
     }catch(err){

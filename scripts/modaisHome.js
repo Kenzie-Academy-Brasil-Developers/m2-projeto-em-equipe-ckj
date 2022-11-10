@@ -107,7 +107,7 @@ function openModalRegister(){
             name: nameInputModal.value,
             email: emailInputModal.value,
             password: senhaInputModal.value,
-            "avatar_url": avatarInputModal.value,
+            avatar_url: avatarInputModal.value,
         }
       
         requestSingUp(obj)
