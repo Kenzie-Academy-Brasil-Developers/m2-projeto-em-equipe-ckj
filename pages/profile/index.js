@@ -1,6 +1,10 @@
 import { readProfile } from "/scripts/requests.js"
 import { logout } from "../../scripts/logout.js"
+
 import {updateProfileModal ,deleteAccountModal} from "../../scripts/modais.js"
+
+
+import { modalNewPet } from "/scripts/modais.js"
 
 
 logout("logout")
@@ -84,3 +88,19 @@ btnDelete.addEventListener('click' , (e) =>{
 }
 
 renderDataProfile()
+
+//cadastrar pet
+
+
+function buttonNewPet(){
+  const btnNewPet = document.querySelector('#newPet')
+  const body = document.querySelector('body')
+  btnNewPet.addEventListener('click',()=>{
+    console.log('click')
+    
+    const newModal = modalNewPet()
+    body.appendChild(newModal)
+  })
+
+}
+buttonNewPet()

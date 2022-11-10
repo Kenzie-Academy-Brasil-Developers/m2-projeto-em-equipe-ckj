@@ -1,0 +1,15 @@
+.texts-cards{
+    font-size: var(size-1);
+    font-weight: var(--font-weight-1);
+    color: var(--brand100);
+}
+.texts-cards-infos{
+    font-size: 14px;
+    font-weight: 400;
+}
+.container-card-profile{
+    width: 30rem;
+    height: 12.5rem;
+    background-color: var(--white-fixed);
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 5px 0px, rgba(0, 0, 0, 0.1) 0px 0px 1px 0px;
+}

@@ -117,6 +117,8 @@ function openModalRegister(){
 
 }
 
+
+
 function openModalLogin(){
     const backgroundModal = document.createElement('section')
     const setModal = document.createElement('div')
@@ -194,6 +196,7 @@ function openModalLogin(){
             password:senhaInputModal.value,
          
         }
+        console.log(data)
             await requestLogin(data)
         })
     }
