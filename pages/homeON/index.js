@@ -1,5 +1,5 @@
 import{requestAllPets} from "/scripts/requests.js"
-
+import{logout} from "/scripts/logout.js"
 function profilePage(id){
     const btnLogout = document.getElementById('profile-page')
     if(btnLogout){
@@ -10,6 +10,7 @@ function profilePage(id){
    
 }
 profilePage()
+logout("logout")
 
 
 

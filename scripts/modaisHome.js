@@ -117,6 +117,8 @@ function openModalRegister(){
 
 }
 
+
+
 function openModalLogin(){
     const backgroundModal = document.createElement('section')
     const setModal = document.createElement('div')
@@ -185,7 +187,7 @@ function openModalLogin(){
 
     if(buttonModal){
 
-        buttonModal.addEventListener("submit" , async (e) => {
+        buttonModal.addEventListener("click" , async (e) => {
             console.log("oi")
             e.preventDefault()
             const data = {
@@ -194,6 +196,7 @@ function openModalLogin(){
             password:senhaInputModal.value,
          
         }
+        console.log(data)
             await requestLogin(data)
         })
     }
