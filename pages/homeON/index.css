@@ -71,7 +71,7 @@ li > div > img{
     display: none;
 }
 .hidden-button{
-    display: block;
+    display: flex;
 }
 
 footer{

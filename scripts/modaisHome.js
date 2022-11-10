@@ -40,16 +40,6 @@ function openModalRegister(){
     const infosModal = document.createElement('span')
     const bottomModal = document.createElement('div')
 
-    buttonModal.addEventListener('click',()=>{
-        let obj = {
-            name: nameInputModal.value,
-            email: emailInputModal.value,
-            password: senhaInputModal.value,
-            avatar_url: avatarInputModal.value,
-        }
-      
-        requestSingUp(obj)
-    })
 
     backgroundModal.classList = 'background-modal'
     backgroundModal.id = 'modal_container'
@@ -110,6 +100,19 @@ function openModalRegister(){
 
     backgroundModal.appendChild(setModal)
 
+
+    buttonModal.addEventListener('click',(e)=>{
+        e.preventDefault()
+        let obj = {
+            name: nameInputModal.value,
+            email: emailInputModal.value,
+            password: senhaInputModal.value,
+            "avatar_url": avatarInputModal.value,
+        }
+      
+        requestSingUp(obj)
+    })
+
     return backgroundModal
 
 }
@@ -130,18 +133,6 @@ function openModalLogin(){
     const infosModal = document.createElement('span')
     const bottomModal = document.createElement('div')
 
-    buttonModal.addEventListener("submit" , async (e) => {
-        
-        e.preventDefault()
-        const data = {
-
-        email:emailInputModal.value,
-        password:senhaInputModal.value,
-     
-    }
-    console.log(data)
-        await requestLogin(data)
-    })
 
     backgroundModal.classList = 'background-modal'
     backgroundModal.id = 'modal_container'
@@ -191,6 +182,21 @@ function openModalLogin(){
     setModal.append(topModal, containModal, bottomModal)
 
     backgroundModal.appendChild(setModal)
+
+    if(buttonModal){
+
+        buttonModal.addEventListener("submit" , async (e) => {
+            console.log("oi")
+            e.preventDefault()
+            const data = {
+    
+            email:emailInputModal.value,
+            password:senhaInputModal.value,
+         
+        }
+            await requestLogin(data)
+        })
+    }
 
     return backgroundModal
 
